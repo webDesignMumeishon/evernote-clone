@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d3d3d3;
+  /* background-color: #d3d3d3; */
 }
 
 code {
@@ -17,12 +17,79 @@ code {
   margin-left: 1em;
 }
 
+.section-edit{
+  width: 50%;
+  margin: auto;
+}
+
 form{
   padding: 1em;
   margin: 1em 2em 0em;
+  border: solid 1px grey;
+  border-radius: .6em;
+
+}
+
+.nav-wrapper{
+  color: black !important;
+  padding: 0 2em;
 }
 
 .note{
   padding: 1em;
-  margin-bottom: 2em;
+  margin-top: 0.3em;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  background-color: #f4f4f4c9;
+  margin: 5px;
+}
+
+.note-title{
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-title i{
+  cursor: pointer;
+}
+
+.note-deadline{
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+  text-align: start;
+}
+
+p{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.black-text{
+  margin: 0px;
+  font-size: 1.3rem;
+}
+
+.add-btn{
+  width: 100%;
+}
+
+.fav-container{
+  padding: 2em;
+  width: 60%;
+  margin: auto;
+}
+
+.radio-input{
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 1em;
+  color: black;
+}
+
+.hover-fav:hover{
+  background-color: #80808099;
 }

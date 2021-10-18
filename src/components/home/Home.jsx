@@ -11,7 +11,7 @@ export const Home = () => {
         <div className="container">
             <div className="row center-align">
                 <div className="col s7"><Form></Form></div>
-                <div className="col s5"><NotesList notes={notes}></NotesList></div>
+                <div style={{marginTop: "1.7em"}} className="col s5"><NotesList notes={notes}></NotesList></div>
             </div>
         </div>
     )

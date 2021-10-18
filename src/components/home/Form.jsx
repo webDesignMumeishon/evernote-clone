@@ -2,17 +2,23 @@ import React from 'react'
 import { addNote } from '../../store/actions/index'
 import {useInputs} from '../../customhook/useInputs'
 import { useDispatch } from 'react-redux'
+import { useState } from 'react'
 
 export const Form = () => {
     const [title, bindTitle, resetTitle] = useInputs()
     const [content, bindContent, resetContent] = useInputs()
+    const [deadline, bindDeadline, resetDeadline] = useInputs()
+    const [important, setImportant] = useState(false)
+
     const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(addNote({title, content}))
+        dispatch(addNote({title, content, deadline, important}))
         resetContent()
         resetTitle()
+        resetDeadline()
+        setImportant(false)
     }
 
     return (
@@ -24,18 +30,26 @@ export const Form = () => {
                     </h5>
                 </header>
                     <div className="input-field">
-                        <input id="first_name2" type="text" className="validate" {...bindTitle}/>
-                        <label className="active" htmlFor="first_name2">Note Title</label>
+                        <input id="title" type="text" className="validate" {...bindTitle} required/>
+                        <label className="active" htmlFor="title">Note Title</label>
                     </div>
                     <div className="input-field">
-                        <input id="first_name3" type="text" className="validate" {...bindContent}/>
-                        <label className="active" htmlFor="first_name3">Note Title</label>
+                        <input id="content" type="text" className="validate" {...bindContent} required/>
+                        <label className="active" htmlFor="content">Note Description</label>
                     </div>
-                    {/* <div className="input-field">
-                        <textarea id="note_content" className="materialize-textarea" {...bindContent}></textarea>
-                        <label htmlFor="note_content">Note Content</label>
-                    </div> */}
-                    <button type="submit" className="btn green">Add</button>
+                    <div className="input-field">
+                        <input id="deadline" type="date" className="validate" {...bindDeadline} required/>
+                        <label className="active" htmlFor="deadline">Note Date</label>
+                    </div>
+                    <div style={{display: "flex", flexDirection: 'row-reverse', justifyContent: "space-around", alignItems: "center"}}>
+                        <input required id="important" className="radio-input" style={{opacity: "1", position: "relative"}} type="radio" checked={important} value={important} />
+                        <label className="radio-input" htmlFor="important" onClick={() => setImportant(prev => !important)}>Important</label>
+                    </div>
+
+                    
+                   
+
+                    <button type="submit" className="btn black add-btn">Add</button>
             </form>
             
         </section>

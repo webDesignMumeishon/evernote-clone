@@ -1,5 +1,6 @@
 
 export const addNote = (note) => {
+    console.log(note)
     return (dispatch, getState, {getFirestore}) =>{
         const firestore = getFirestore()
         firestore.collection('notes')
@@ -54,9 +55,11 @@ export const updateNote = (note) => {
         const firestore = getFirestore()
         const updatedTitle = !note.title ? note.oldTitle : note.title
         const updatedContent = !note.content ? note.oldContent : note.content
+        const updatedDeadline = !note.deadline ? note.oldDeadline : note.deadline
         firestore.collection('notes').doc(note.id).update({
             title: updatedTitle, 
-            content: updatedContent
+            content: updatedContent,
+            deadline: updatedDeadline
         }) 
         .then(() => {
             console.log('note updated successfully')
