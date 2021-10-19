@@ -8,7 +8,7 @@ export const NoteDetail = (props) => {
     const note = useSelector(({firestore: {data}}) => data.notes && data.notes[id])
 
     const noteMarkUp = !isLoaded(note) ? (
-        <div className="container section">
+        <div className="container section detail-container">
             <div className="card z-depth-0">
                 <div className="card content">
                     <span className="card-title">Loading...</span>
@@ -17,7 +17,7 @@ export const NoteDetail = (props) => {
             </div>
         </div>
     ) : isEmpty(note) ? (
-        <div className="container section">
+        <div className="container section detail-container">
         <div className="card z-depth-0">
             <div className="card content">
                 <span className="card-title">The note content is empty</span>
@@ -28,13 +28,14 @@ export const NoteDetail = (props) => {
         </div>
     </div>
     ) : (
-        <div className="container section">
+        <div className="container section detail-container">
         <div className="card z-depth-0">
             <div className="card content">
                 <span className="card-title">{note?.title}</span>
-                <p>{note?.content}</p>
+                <p><span className="span-style">Description </span>{note?.content}</p>
+                <p><span className="span-style">Date </span> {note.deadline}</p>
                 <div className="card-action grey lighten-4">
-                    <div>{moment(note?.createdAt.toDate()).calendar()}</div>
+                    <div>Created: {moment(note?.createdAt.toDate()).calendar()}</div>
                 </div>
             </div>
           

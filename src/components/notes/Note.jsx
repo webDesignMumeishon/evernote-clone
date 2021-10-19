@@ -33,9 +33,11 @@ export const Note = ({id, note}) => {
                     </Link>
                 </div>
             </div>
-            <p className="note-deadline">{note.deadline}</p>
+            <div className="note-title">
+                <p className="note-deadline">{note.deadline}</p>
+                <p className="grey-text note-deadline">{moment(note.createdAt.toDate()).fromNow()}</p>
+            </div>
             {/* <p className="truncate">{note.content}</p> */}
-            {/* <p className="grey-text">{moment(note.createdAt.toDate()).fromNow()}</p> */}
             {/* <div className="right-align">
                 <Link to={`/edit/${note.id}`}>
                     <i className="material-icons black-text" onClick={editNoteHandler}>edit</i>

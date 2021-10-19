@@ -83,6 +83,12 @@ p{
   margin: auto;
 }
 
+.detail-container{
+  padding: 2em;
+  width: 50%;
+  margin: auto;
+}
+
 .radio-input{
   font-size: 1.3rem;
   cursor: pointer;
@@ -92,4 +98,17 @@ p{
 
 .hover-fav:hover{
   background-color: #80808099;
+}
+
+.content{
+  padding: 2em;
+}
+
+.span-style{
+  background: black;
+  color: white;
+  border-radius: .2em;
+  padding: .1em;
+  border: solid 1px white;
+  margin-right: 1em;
 }

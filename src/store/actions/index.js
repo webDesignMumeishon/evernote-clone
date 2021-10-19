@@ -56,10 +56,12 @@ export const updateNote = (note) => {
         const updatedTitle = !note.title ? note.oldTitle : note.title
         const updatedContent = !note.content ? note.oldContent : note.content
         const updatedDeadline = !note.deadline ? note.oldDeadline : note.deadline
+        const updatedImportant = !note.important ? note.oldImportant: note.important
         firestore.collection('notes').doc(note.id).update({
             title: updatedTitle, 
             content: updatedContent,
-            deadline: updatedDeadline
+            deadline: updatedDeadline,
+            important: updatedImportant
         }) 
         .then(() => {
             console.log('note updated successfully')

@@ -13,7 +13,7 @@ export const EditNote = () => {
     const [title, bindTitle, resetTitle] = useInputs(note.title)
     const [content, bindContent, resetContent] = useInputs(note.content)
     const [deadline, bindDeadline, resetDeadline] = useInputs(note.deadline)
-    const [important, setImportant] = useState(false)
+    const [important, setImportant] = useState(note.important)
 
     
     const dispatch = useDispatch()
@@ -22,7 +22,7 @@ export const EditNote = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(updateNote({id: note.id, title, content,deadline, oldTitle: note.title, oldContent: note.content, oldDeadline: note.deadline}))
+        dispatch(updateNote({id: note.id, title, content,deadline, oldTitle: note.title, oldContent: note.content, oldDeadline: note.deadline, oldImportant: important}))
         resetContent()
         resetTitle()
         resetDeadline()
