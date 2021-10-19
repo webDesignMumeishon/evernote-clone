@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  /* background-color: #d3d3d3; */
 }
 
 code {
@@ -19,17 +18,9 @@ code {
   font-size: 1.5rem;
 }
 
-.section-edit{
-  width: 50%;
-  margin: auto;
-}
-
-form{
-  padding: 1em;
-  margin: 1em 2em 0em;
-  border: solid 1px grey;
-  border-radius: .6em;
-
+.form-container{
+  width: 55%;
+  float: left;
 }
 
 .nav-wrapper{
@@ -40,28 +31,6 @@ form{
   justify-content: space-between;
 }
 
-.note{
-  padding: 1em;
-  margin-top: 0.3em;
-  font-family: 'Poppins', sans-serif;
-  width: 100%;
-  background-color: #f4f4f4c9;
-  margin: 5px;
-  transition: all 1s ease;
-}
-
-.note:hover{
-  transform: translateX(10px);
-}
-
-.note-title{
-  display: flex;
-  justify-content: space-between;
-}
-
-.note-title i{
-  cursor: pointer;
-}
 
 .note-deadline{
   margin: 0;
@@ -81,10 +50,6 @@ p{
 .black-text{
   margin: 0px;
   font-size: 1.3rem;
-}
-
-.add-btn{
-  width: 100%;
 }
 
 .fav-container{
@@ -117,6 +82,21 @@ p{
   background-color: #80808099;
 }
 
+.notesList{
+  margin-top: 1.5em;
+  float: right;
+  width: 45%;
+  height: 60vh;
+}
+
+.pagination{
+  float: right;
+  width: 45%;
+  text-align: center;
+  display: flex;
+    justify-content: center;
+}
+
 .content{
   padding: 2em;
 }
@@ -142,7 +122,6 @@ p{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* justify-content: center */
 }
 
 .square-one{
@@ -172,5 +151,18 @@ p{
 @keyframes loading-three{
   100%{
     background-color: white;
+  }
+}
+
+@media only screen and (max-width: 700px){
+
+  .notesList{
+    float: none;
+    width: 100%;
+  }
+
+  .form-container{
+    float: none;
+    width: 100%;
   }
 }

@@ -5,6 +5,7 @@ import {Home} from "./components/home/Home"
 import {Favorites} from "./components/notes/Favorites"
 import {NoteDetail} from "./components/notes/NoteDetail"
 import {EditNote} from "./components/notes/EditNote"
+import { Footer } from './components/home/Footer'
 
 
 function App() {

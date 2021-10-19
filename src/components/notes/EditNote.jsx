@@ -4,6 +4,7 @@ import { updateNote } from '../../store/actions/index'
 import {useInputs} from '../../customhook/useInputs'
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
+import { EditBody } from '../styled-components/Edit'
 
 
 export const EditNote = () => {
@@ -31,7 +32,7 @@ export const EditNote = () => {
     }
 
     return (
-        <section className="section section-edit"> 
+        <EditBody className="section"> 
             <form onSubmit={handleSubmit} className="white">
                 <header>
                     <h5 className="grey-text text-darken-3" style={{padding: ".3em"}}>
@@ -57,7 +58,7 @@ export const EditNote = () => {
                     <button type="submit" className="btn black add-btn">Update</button>
             </form>
             
-        </section>
+        </EditBody>
 
     )
 }

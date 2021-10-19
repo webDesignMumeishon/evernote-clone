@@ -3,6 +3,14 @@ import { addNote } from '../../store/actions/index'
 import {useInputs} from '../../customhook/useInputs'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
+import {
+    FormBody,
+    FormBtn,
+    ImportantBody,
+    ImportantInput,
+} from '../styled-components/Form'
+
+
 
 export const Form = () => {
     const [title, bindTitle, resetTitle] = useInputs()
@@ -23,7 +31,7 @@ export const Form = () => {
 
     return (
         <section className="section"> 
-            <form onSubmit={handleSubmit} className="white">
+            <FormBody onSubmit={handleSubmit} className="white">
                 <header>
                     <h5 className="grey-text text-darken-3">
                         New Note
@@ -41,16 +49,13 @@ export const Form = () => {
                         <input id="deadline" type="date" className="validate" {...bindDeadline} required/>
                         <label className="active" htmlFor="deadline">Note Date</label>
                     </div>
-                    <div style={{display: "flex", flexDirection: 'row-reverse', justifyContent: "space-around", alignItems: "center"}}>
-                        <input required id="important" className="radio-input" style={{opacity: "1", position: "relative"}} type="radio" checked={important} value={important} />
+                    <ImportantBody>
+                        <ImportantInput required id="important" className="radio-input"  type="radio" checked={important} value={important} />
                         <label className="radio-input" htmlFor="important" onClick={() => setImportant(prev => !important)}>Important</label>
-                    </div>
+                    </ImportantBody>
 
-                    
-                   
-
-                    <button type="submit" className="btn black add-btn">Add</button>
-            </form>
+                    <FormBtn type="submit" className="btn black">Add</FormBtn>
+            </FormBody>
             
         </section>
 
