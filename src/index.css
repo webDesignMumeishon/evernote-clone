@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
   /* background-color: #d3d3d3; */
 }
 
@@ -13,8 +14,9 @@ code {
     monospace;
 }
 
-.brand-logo{
+.notes-logo{
   margin-left: 1em;
+  font-size: 1.5rem;
 }
 
 .section-edit{
@@ -33,6 +35,9 @@ form{
 .nav-wrapper{
   color: black !important;
   padding: 0 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .note{
@@ -42,6 +47,11 @@ form{
   width: 100%;
   background-color: #f4f4f4c9;
   margin: 5px;
+  transition: all 1s ease;
+}
+
+.note:hover{
+  transform: translateX(10px);
 }
 
 .note-title{
@@ -78,15 +88,17 @@ p{
 }
 
 .fav-container{
-  padding: 2em;
+  padding: 1%;
   width: 60%;
   margin: auto;
+  min-width: 280px;
 }
 
 .detail-container{
-  padding: 2em;
+  padding: 1%;
   width: 50%;
   margin: auto;
+  min-width: 280px;
 }
 
 .radio-input{
@@ -94,6 +106,11 @@ p{
   cursor: pointer;
   padding: 1em;
   color: black;
+}
+
+.hover-fav{
+  padding: 0 1em;
+  transition: .3s ease-in-out;
 }
 
 .hover-fav:hover{
@@ -111,4 +128,49 @@ p{
   padding: .1em;
   border: solid 1px white;
   margin-right: 1em;
+}
+
+.square{
+  width: 30px;
+  height: 30px;
+  border: solid 1px;
+  background: grey;
+  border-radius: 100px;
+}
+
+.loading-element{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* justify-content: center */
+}
+
+.square-one{
+ animation: loading-one 2s ease-in infinite ;
+}
+
+.square-two{
+  animation: loading-two 2s ease-in infinite ;
+}
+
+.square-three{
+  animation: loading-three 2s ease-in infinite ;
+}
+
+@keyframes loading-one{
+  0%{
+    background-color: white;
+  }
+}
+
+@keyframes loading-two{
+  50%{
+    background-color: white;
+  }
+}
+
+@keyframes loading-three{
+  100%{
+    background-color: white;
+  }
 }

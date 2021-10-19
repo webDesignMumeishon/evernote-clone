@@ -6,10 +6,13 @@ export const Navbar = () => {
     return (
         <nav className="black">
         <div className="nav-wrapper">
-          <Link to='/' className="brand-logo">Notes</Link>
-          <ul className="right hide-on-med-and-down hover-fav">
-            <li><NavLink to='/favorites'>Favorites</NavLink></li>
-          </ul>
+          
+          <NavLink to='/' className="notes-logo">Notes</NavLink>
+          <NavLink to='/favorites' className="hover-fav">Favorites</NavLink>
+
+          {/* <ul className="right hide-on-med-and-down hover-fav">
+            <li></li>
+          </ul> */}
         </div>
       </nav>
     )

@@ -2,6 +2,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import moment from 'moment'
+import { Loading } from '../layout/Loading'
+
+
 export const NoteDetail = (props) => {
     const id = props.match.params.id
     useFirestoreConnect([{collection: 'notes', doc:id}])
@@ -11,8 +14,7 @@ export const NoteDetail = (props) => {
         <div className="container section detail-container">
             <div className="card z-depth-0">
                 <div className="card content">
-                    <span className="card-title">Loading...</span>
-                    <div className="card-action grey lighten-4"></div>
+                    <span className="card-title"><Loading></Loading></span>
                 </div>
             </div>
         </div>
